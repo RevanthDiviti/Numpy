@@ -1,0 +1,15 @@
+Numpy is the core library for scientific and numerical computing in python.
+
+It provides high-performance multidimentional array object and tools for working with arrays.
+
+Numpy main objective is the multidimentional array.
+
+It is a table of elements (usually numbers), all of the same type, indexed by a tuple of positive integers.
+
+In numpy, dimensions are called axes
+
+
+Why should we use Numpy array when we have python list? 
+1) Numpy Array is Very optimized when compared with python list.
+2)It also uses less memrory. So, it's optimize both for speed and memory use.
+

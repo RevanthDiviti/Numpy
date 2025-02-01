@@ -1,0 +1,125 @@
+//To create numpy array
+
+import numpy as np
+a=np.array([1,2,3])
+print(a) - output - [1 2 3]
+
+--------------------------
+
+a=np.array([[1,2],[3,4],[5,6]]) - To create multidimentional array
+--------------------------
+
+a.ndim - to get how many dimensions our array has -> Ex - 2
+--------------------------
+
+a.itemsize - to get size of our array. -> Ex: 4 - in bytes
+-------------------------------------------
+
+a.shape - to get shape of array. we get rows and columns count as shape -> Ex: (3,2)
+-------------------------------------------
+The command np.arange(1000) will generate a NumPy array containing values from 0 to 999 (inclusive of 0, exclusive of 1000).
+Essentially, it's creating an array of 1000 integers starting from 0.
+
+arr = np.arange(1000)    
+print(arr)
+
+[  0   1   2   3   4   5   6   7   8   9 ... 997 998 999]
+
+Example-2
+
+import numpy as np
+
+a = np.arange(9)
+print("The original array: ")
+print(a)
+
+The original array: 
+[0 1 2 3 4 5 6 7 8]
+----------------------------------------------------------
+
+a= np.array([[1,2],[3,4],[5,6]],dtype=np.float64)
+print(a)
+output for 16th line is 18th-20th lines
+[[1., 2.],
+ [3., 4.],
+ [5., 6.]]
+---------
+ a= np.zeros((3,4))
+print(a)
+output is 
+    [[0., 0., 0., 0.],
+       [0., 0., 0., 0.],
+       [0., 0., 0., 0.]]
+------
+print(np.ones((3,4)))
+
+[[1. 1. 1. 1.]
+ [1. 1. 1. 1.]
+ [1. 1. 1. 1.]]
+
+ np.arange(5)
+---------
+np.arange(5)
+
+array([0, 1, 2, 3, 4])
+-------
+print("Concatination example: ")
+print(np.char.add(["Hello","hi"],['abc','xyz']))
+
+
+Concatination example: 
+['Helloabc' 'hixyz']
+---------
+
+print(np.char.multiply("Hello",3))
+
+HelloHelloHello
+------------
+print(np.char.center("Revanth",20,fillchar="-"))
+
+$$$$$$Revanth$$$$$$$
+------------
+print(np.char.capitalize("revanth mudiraj"))
+
+Revanth mudiraj      - first letter capitalized
+--------------
+print(np.char.title("my name is revanth mudiraj"))
+
+My Name Is Revanth Mudiraj
+---------------
+print(np.char.lower(["HELLO","WORLD"]))
+print(np.char.lower("HELLO"))
+
+['hello' 'world']
+hello
+-----------------
+print(np.char.upper(['python','data']))
+print(np.char.upper('python is easy'))
+
+['PYTHON' 'DATA']
+PYTHON IS EASY
+---------------------
+print(np.char.split("are you coming to the party?"))
+
+['are', 'you', 'coming', 'to', 'the', 'party?']
+-------------------------
+print(np.char.splitlines("Hello\nHow are you doing?"))
+
+['Hello', 'How are you doing?']
+------------------------
+print(np.char.strip(['nina','admin','anaita'],'a'))
+
+['nin' 'dmin' 'nait']
+----------------------------
+print(np.char.strip(['nina','admin','aaanaitaaaaa'],'a'))
+
+['d:m:y' 'y-m-d']
+---------------------------
+print(np.char.replace("He is good dancer","is","was"))
+
+He was good dancer
+-------------------------
+
+
+
+
