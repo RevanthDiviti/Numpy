@@ -1,0 +1,203 @@
+                                        Iterations
+
+a = np.arange(0,45,5)
+a=a.reshape(3,3)
+a
+
+array([[ 0,  5, 10],
+       [15, 20, 25],
+       [30, 35, 40]])
+-------------------------------   ITERATION OVER ARRAYS ------------------------------------
+
+import numpy as np 
+a = np.arange(0,45,5)
+a=a.reshape(3,3)
+for x in np.nditer(a):
+    print(x)
+
+0
+5
+10
+15
+20
+25
+30
+35
+40
+------------------------- # Iteration order (c-style and f-style) ---------------------------
+import numpy as np 
+a = np.arange(0,45,5)
+a=a.reshape(3,3)
+print(a)
+for x in np.nditer(a,order="c"):     ---It iterates through rows
+    print(x)
+
+for y in np.nditer(a,order="f"):         --- It iterates through columns
+    print(y)
+
+[[ 0  5 10]
+ [15 20 25]
+ [30 35 40]]
+0
+5
+10
+15
+20
+25
+30
+35
+40
+0
+15
+30
+5
+20
+35
+10
+25
+40
+-------------------------------------- JOINING ARRAYS ------------------------
+
+import numpy as np 
+a = np.array([[1,2],[3,4]])
+print("First array")
+print(a)
+
+b = np.array([[5,6],[7,8]])
+print("Second array")
+print(b)
+
+print("\n")
+print("Joining the two arrays along axis 0: ")
+print(np.concatenate((a,b)))
+print("\n")
+
+First array
+[[1 2]
+ [3 4]]
+Second array
+[[5 6]
+ [7 8]]
+
+
+Joining the two arrays along axis 0: 
+[[1 2]
+ [3 4]
+ [5 6]
+ [7 8]]
+ ----------------------------------------
+import numpy as np 
+a = np.array([[1,2],[3,4]])
+print("First array")
+print(a)
+
+b = np.array([[5,6],[7,8]])
+print("Second array")
+print(b)
+
+print("\n")
+print("Joining the two arrays along axis 0: ")   -If we specify 0 axis, it concatenates rows wise
+print(np.concatenate((a,b)))
+print("\n")
+print("Joining the two arrays along axis 1:")    - If we specify 1 axis it concatenates columns wise
+print(np.concatenate((a,b),axis=1))
+
+
+
+ First array
+[[1 2]
+ [3 4]]
+Second array
+[[5 6]
+ [7 8]]
+
+
+Joining the two arrays along axis 0: 
+[[1 2]
+ [3 4]
+ [5 6]
+ [7 8]]
+
+
+Joining the two arrays along axis 1:
+[[1 2 5 6]
+ [3 4 7 8]]
+
+------------------------------------------- SPLITTING ARRAY------------------------
+import numpy as np
+a = np.arange(9)
+print(a)
+print(np.split(a,3))
+
+[0 1 2 3 4 5 6 7 8]
+[array([0, 1, 2]), array([3, 4, 5]), array([6, 7, 8])]
+-----------------------------------------------------------------
+import numpy as np
+a = np.arange(9)
+print(a)
+print(np.split(a,[4,5]))     -It splits the existing array. first splitting array is upto 4 index values and  
+                                    next splitting array is next mentioned number index i.e., 5 then rest all elements in last array.
+print(np.split(a,[4,7]))     - In the same way, it takes upto first mentioned number index i.e., 4 and next array is upto next mentioned value
+                                    i.e., 7.  (Can understand by output.)
+
+[0 1 2 3 4 5 6 7 8]
+[array([0, 1, 2, 3]), array([4]), array([5, 6, 7, 8])]
+[array([0, 1, 2, 3]), array([4, 5, 6]), array([7, 8])]
+------------------------- RESIZING THE ARRAY------------
+import numpy as np
+#a = np.arange(1,7).reshape(2,3)
+a = np.array([[1,2,3],[4,5,6]])
+print(a)
+print(a.shape)
+print("\n")
+b = np.resize(a,(3,2))
+print(b)
+print(b.shape)
+
+[[1 2 3]
+ [4 5 6]]
+(2, 3)
+
+
+[[1 2]
+ [3 4]
+ [5 6]]
+(3, 2)
+--------------------------------------
+import numpy as np
+#a = np.arange(1,7).reshape(2,3)
+a = np.array([[1,2,3],[4,5,6]])
+print(a)
+print(a.shape)
+print("\n")
+b = np.resize(a,(3,2))
+print(b)
+print(b.shape)
+c = np.resize(a,(3,3))   *****
+print(c)
+print(c.shape)
+
+[[1 2 3]
+ [4 5 6]]
+(2, 3)
+
+
+[[1 2]
+ [3 4]
+ [5 6]]
+(3, 2)
+[[1 2 3]
+ [4 5 6]
+ [1 2 3]]    *********
+(3, 3)
+---------------
+
+
+
+
+
+
+
+
+
+
